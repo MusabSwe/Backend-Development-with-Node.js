@@ -1,6 +1,6 @@
 // Concatenate two arrays
 
-const concatArr = (arr1: string[], arr2: string[]) => {
+const concatArr = (arr1: (string | number)[], arr2: (string | number)[]) => {
     return [...arr1, ...arr2];
 };
 
@@ -31,7 +31,7 @@ const cut3 = (arr: (number | string | boolean)[]) => {
     return arr;
 };
 
-module.exports = {
+export default {
     concatArr,
     addArr,
     lgNum,

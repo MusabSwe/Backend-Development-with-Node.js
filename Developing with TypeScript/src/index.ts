@@ -1,9 +1,9 @@
-const arrays = require('./utilities/arrays');
-const numbers = require('./utilities/numbers');
-const strings = require('./utilities/strings');
-// import arrays from "./utilities/arrays";
-// import numbers from './utilities/numbers'; Nodejs use commonjs in the modules and commonjs use require& module.export
-// import strings from './utilities/strings'; However ES6 use import export
+// const arrays = require('./utilities/arrays');
+// const numbers = require('./utilities/numbers');
+// const strings = require('./utilities/strings');
+import arrays from "./utilities/arrays";
+import numbers from './utilities/numbers'; //Nodejs use commonjs in the modules and commonjs use require& module.export
+import strings from './utilities/strings'; //However ES6 use import export
 
 
 // const a = 4;
@@ -45,7 +45,6 @@ const strings = require('./utilities/strings');
 // NOTE: This code has not been converted to TypeScript yet
 // Task convert JavaScript code to TypeScript code
 
-
 const numArr: number[] = [3, 4, 5, 6];
 const wordArr: string[] = ['cat', 'dog', 'rabbit', 'bird'];
 const arrSum = arrays.addArr(numArr);
@@ -56,5 +55,5 @@ const myNum = ('15' as unknown) as number % 2;
 console.log(arrays.cut3(mixArr));
 console.log(numbers.sum(arrSum, myNum));
 console.log(strings.capitalize('the quick brown fox'));
-console.log(numbers.multiply('5', 8));
-console.log(arrays.lgNum(mixArr));
+console.log(numbers.multiply(('5' as unknown) as number, 8));
+console.log(arrays.lgNum((mixArr as unknown) as number[]));

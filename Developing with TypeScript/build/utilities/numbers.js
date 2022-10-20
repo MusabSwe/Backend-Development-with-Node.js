@@ -1,5 +1,6 @@
 "use strict";
 // multiply
+Object.defineProperty(exports, "__esModule", { value: true });
 var multiply = function (num1, num2) {
     return num1 * num2;
 };
@@ -19,7 +20,7 @@ var subtract = function (num1, num2) {
 var square = function (num) {
     return num * num;
 };
-module.exports = {
+exports.default = {
     multiply: multiply,
     subtract: subtract,
     divide: divide,

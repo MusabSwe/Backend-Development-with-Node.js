@@ -1,4 +1,5 @@
 "use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
 var concat = function (str1, str2) {
     return str1 + str2;
 };
@@ -14,7 +15,7 @@ var upperCase = function (str) {
 var lowerCase = function (str) {
     return str.toLowerCase();
 };
-module.exports = {
+exports.default = {
     concat: concat,
     capitalize: capitalize,
     upperCase: upperCase,

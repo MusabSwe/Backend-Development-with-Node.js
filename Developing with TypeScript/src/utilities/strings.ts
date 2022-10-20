@@ -1,11 +1,11 @@
-const concat = (str1: string, str2: string) =>{
+const concat = (str1: string, str2: string) => {
     return str1 + str2;
 };
 
 const capitalize = (str: string) => {
     const newStr = str.split(' ')
-    .map(word => word[0].toUpperCase() + word.substr(1))
-    .join(' ');
+        .map(word => word[0].toUpperCase() + word.substr(1))
+        .join(' ');
     return newStr;
 };
 
@@ -17,7 +17,7 @@ const lowerCase = (str: string) => {
     return str.toLowerCase();
 };
 
-module.exports = {
+export default {
     concat,
     capitalize,
     upperCase,
