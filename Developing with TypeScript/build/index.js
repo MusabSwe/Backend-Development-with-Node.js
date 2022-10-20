@@ -1,14 +1,10 @@
 "use strict";
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
-Object.defineProperty(exports, "__esModule", { value: true });
 // const arrays = require('./utilities/arrays');
 // const numbers = require('./utilities/numbers');
 // const strings = require('./utilities/strings');
-var arrays_1 = __importDefault(require("./utilities/arrays"));
-var numbers_1 = __importDefault(require("./utilities/numbers")); //Nodejs use commonjs in the modules and commonjs use require& module.export
-var strings_1 = __importDefault(require("./utilities/strings")); //However ES6 use import export
+// import arrays from "./utilities/arrays";
+// import numbers from './utilities/numbers'; //Nodejs use commonjs in the modules and commonjs use require& module.export
+// import strings from './utilities/strings'; //However ES6 use import export
 // const a = 4;
 // const b = 6;
 // const c = ('5' as unknown) as number;
@@ -42,14 +38,70 @@ var strings_1 = __importDefault(require("./utilities/strings")); //However ES6 u
 // console.log(move(10, Compass.East));
 // NOTE: This code has not been converted to TypeScript yet
 // Task convert JavaScript code to TypeScript code
-var numArr = [3, 4, 5, 6];
-var wordArr = ['cat', 'dog', 'rabbit', 'bird'];
-var arrSum = arrays_1.default.addArr(numArr);
-var mixArr = arrays_1.default.concatArr(numArr, wordArr);
-var myNum = '15' % 2;
+// const numArr: number[] = [3, 4, 5, 6];
+// const wordArr: string[] = ['cat', 'dog', 'rabbit', 'bird'];
+// const arrSum = arrays.addArr(numArr);
+// const mixArr = arrays.concatArr(numArr, wordArr);
+// const myNum = ('15' as unknown) as number % 2;
 // results of function calls
-console.log(arrays_1.default.cut3(mixArr));
-console.log(numbers_1.default.sum(arrSum, myNum));
-console.log(strings_1.default.capitalize('the quick brown fox'));
-console.log(numbers_1.default.multiply('5', 8));
-console.log(arrays_1.default.lgNum(mixArr));
+// console.log(arrays.cut3(mixArr));
+// console.log(numbers.sum(arrSum, myNum));
+// console.log(strings.capitalize('the quick brown fox'));
+// console.log(numbers.multiply(('5' as unknown) as number, 8));
+// console.log(arrays.lgNum((mixArr as unknown) as number[]));
+// Promise Chaining VS Async/Await Example in TS
+var step1 = function () {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            try {
+                var nextStep = 1;
+                console.log("completed step 1");
+                resolve(nextStep);
+            }
+            catch (error) {
+                reject();
+            }
+        }, 1000);
+    });
+};
+var step2 = function (step) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            try {
+                var nextStep = step + 1;
+                console.log("completed step ".concat(nextStep));
+                resolve(nextStep);
+            }
+            catch (error) {
+                reject();
+            }
+        }, 1000);
+    });
+};
+var step3 = function (step) {
+    return new Promise(function (resolve, reject) {
+        setTimeout(function () {
+            try {
+                var nextStep = step + 1;
+                console.log("completed step ".concat(nextStep));
+                resolve(nextStep);
+            }
+            catch (error) {
+                reject();
+            }
+        }, 1000);
+    });
+};
+step1()
+    .then(function (result) {
+    return step2(result);
+})
+    .then(function (result) {
+    return step3(result);
+})
+    .then(function () {
+    console.log("your house is done");
+})
+    .catch(function () {
+    console.log('there was an error building');
+});
